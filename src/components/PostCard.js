@@ -27,7 +27,7 @@ export default function PostCard({
       ? colors.warning
       : colors.primary;
 
- (
+ return (
     <View style={styles.card}>
       <View style={styles.topRow}>
         {/* Display the platform prop below. */}
