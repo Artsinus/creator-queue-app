@@ -73,6 +73,10 @@ setPosts((currentPosts) => [
 
   function handleDeletePost(id) {
     // Use filter() to remove the matching published post.
+    setPosts((currentPosts) =>
+  currentPosts.filter((post) => post.id !== id)
+);
+
 
   }
 
