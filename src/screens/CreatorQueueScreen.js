@@ -44,6 +44,30 @@ setPosts((currentPosts) => [
     // Draft -> Scheduled
     // Scheduled -> Published
     // Published -> Published
+    setPosts((currentPosts) =>
+  currentPosts.map((post) => {
+    if (post.id !== id) {
+      return post;
+    }
+
+    if (post.status === 'Draft') {
+      return {
+        ...post,
+        status: 'Scheduled',
+      };
+    }
+
+    if (post.status === 'Scheduled') {
+      return {
+        ...post,
+        status: 'Published',
+      };
+    }
+
+    return post;
+  })
+);
+
 
   }
 
