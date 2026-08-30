@@ -82,7 +82,13 @@ setPosts((currentPosts) => [
 
   // Create filteredPosts so All shows everything
   // and each other filter shows only matching statuses.
-  const filteredPosts = posts;
+  const filteredPosts =
+  selectedFilter === 'All'
+    ? posts
+    : posts.filter(
+        (post) => post.status === selectedFilter
+      );
+
 
   const publishedCount = posts.filter(
     (post) => post.status === 'Published'
